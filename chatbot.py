@@ -3,8 +3,7 @@ import re
 import xml.etree.ElementTree as ET
 import requests
 
-# Put your actual name here!
-YOUR_NAME = "Ishika Singh"  # <--- Change this to your real name or handle
+YOUR_NAME = "Ishika Singh" 
 GROQ_CHAT_URL = "https://api.groq.com/openai/v1/chat/completions"
 MODEL = "llama-3.3-70b-versatile"
 GOOGLE_NEWS_RSS_URL = "https://news.google.com/rss/search"
@@ -77,8 +76,6 @@ while True:
     messages.append({"role": "user", "content": user_input})
     request_messages = messages
 
-    # Groq handles the chat; Google News supplies a fresh source set for
-    # current-event questions such as "latest news" or "/news technology".
     if wants_live_news(user_input):
         try:
             live_news = get_live_news(user_input)
